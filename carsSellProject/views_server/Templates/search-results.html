@@ -1,0 +1,72 @@
+
+
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+
+{% block navbar %}
+
+
+{%  include 'navbar.html' %}
+
+{% endblock navbar %}
+
+{% block content %}
+
+<div class="row" style="margin-left:-37%;margin-top:2%;">
+
+
+
+
+
+  <div style="margin-left:7%;" class="col-md-11" >
+        <div class="card card-body col-12"style="  background:rgba(0,0,0,0.5);border-radius:25px;display:inline-block;  margin-left:10%;margin-top:0%;">
+
+
+            {% for post in object_list %}
+            <div class="card" style="background:rgba(255,255,255,0.4);  border-radius:10%; width: 18rem; display:inline-block; margin-top:2%; margin-left:1%;">
+                <img class="card-img-top" style="height:250px;" src="{{post.car_pic.url}}" alt="Card image cap">
+
+                <div class="card-body">
+                    <h2 class="card-title" style="text-align:center" > {{post.car_type}}</h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong style="font-size: 18px">Car Model | </strong>{{post.car_model}}</li>
+                <li class="list-group-item"><strong style="font-size: 18px">Car Year | </strong>{{post.car_year}}</li>
+                <li class="list-group-item"><strong style="font-size: 18px">Car Yad | </strong>{{post.car_yad}}</li>
+                <li class="list-group-item"><strong style="font-size: 18px">Price | </strong>{{post.car_price}}</li>
+                <li class="list-group-item"><strong style="font-size: 18px">Country | </strong>{{post.user.country}}</li>
+                <li class="list-group-item"><strong style="font-size: 18px">Phone-Number | </strong>{{post.user.phone_number}}</li>
+
+                </ul>
+
+                <div class="card-body">
+                    <a href="#" class="card-link" style="margin-left:15%;">{{post.date_created}}</a>
+
+
+
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+
+        <br>
+  </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}

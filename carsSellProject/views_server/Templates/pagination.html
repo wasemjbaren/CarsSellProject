@@ -1,0 +1,18 @@
+{% if is_paginated %}
+<br>
+<ul class="pagination" >
+    {% if page_obj.has_previous %}
+    <li>
+        <span ><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary" > Previous &nbsp; </a></span>
+    </li>
+    {% endif %}
+    <li class="">
+        <span style="font-size:23px;color:AliceBlue;font-weight: 900;"> Page  {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} </span>
+    </li>
+    {% if page_obj.has_next %}
+    <li>
+        <span style="margin-left:10%;"><a  href="?page={{ page_obj.next_page_number }}" class="btn btn-primary" > &nbsp;&nbsp; Next </a></span>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

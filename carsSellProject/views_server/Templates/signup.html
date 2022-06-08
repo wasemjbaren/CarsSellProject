@@ -1,0 +1,44 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags%}
+{% load static %}
+    {% block title %}
+    Signup
+    {% endblock title %}
+
+    {% block content %}
+
+
+
+<div class="container-fluid" style="margin-left:30%;margin-top:10%; color:blue; font-size:20px; 	font-weight: bold">
+    <div class="row" style="margin-top:3%; ">
+        <div class="col-md-4 col-xs-12"  style="border: 12px solid rgba(255, 255, 255, 0.3);">
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button id="sign_up_button" type="submit" class="btn btn-primary">Sign up</button>
+
+            </form>
+            <a href="{% url 'login' %}">Already a user ? , Log in</a>
+        </div>
+
+<!--        <div class="col-md-8 col-xs-12">-->
+<!--            <img class="img-fluid" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" style="border: 2px solid red;-->
+<!--  border-radius: 12px;-->
+<!--  padding: 5px;" >-->
+
+<!--        </div>-->
+
+
+    </div>
+</div>
+
+<script>
+
+    element id == sign_up_button:
+    mousehover
+
+
+</script>
+
+    {% endblock content %}
